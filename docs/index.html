@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .project {
+      background: white;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    .project iframe {
+      flex: 1 1 500px;
+      min-height: 300px;
+      border: none;
+    }
+
+    .description {
+      flex: 1 1 300px;
+      padding: 1.5rem;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .description h2 {
+      margin-top: 0;
+      color: #4a90e2;
+    }
+
+    @media (max-width: 768px) {
+      .project {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Check out some of my recent projects below.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="project">
+      <iframe src="https://your-embed-link-1.com"></iframe>
+      <div class="description">
+        <h2>Project One</h2>
+        <p>A web app that visualizes data from smart sensors in real-time using D3.js and WebSockets.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <iframe src="https://your-embed-link-2.com"></iframe>
+      <div class="description">
+        <h2>Project Two</h2>
+        <p>A machine learning dashboard for predicting environmental trends based on open GIS data.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <iframe src="https://your-embed-link-3.com"></iframe>
+      <div class="description">
+        <h2>Project Three</h2>
+        <p>An interactive map that explores the relationship between urban green spaces and social wellbeing.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
