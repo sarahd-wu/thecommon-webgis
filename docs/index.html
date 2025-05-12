@@ -3,98 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Portfolio | Your Name</title>
   <style>
+    /* Typography and Base Styles */
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      font-family: "Georgia", serif;
+      background-color: #fefefe;
+      color: #2b2b2b;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
+      background-color: #f0f0f0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.75rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.125rem;
+      color: #666;
+      margin-top: 0.5rem;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
 
     .project {
-      background: white;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-wrap: wrap;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: center;
     }
 
     .project iframe {
-      flex: 1 1 500px;
-      min-height: 300px;
-      border: none;
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
     }
 
     .description {
-      flex: 1 1 300px;
-      padding: 1.5rem;
-      background-color: #fafafa;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 1rem;
     }
 
     .description h2 {
       margin-top: 0;
-      color: #4a90e2;
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      font-weight: normal;
+    }
+
+    .description p {
+      color: #555;
     }
 
     @media (max-width: 768px) {
       .project {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+      }
+
+      .project iframe {
+        height: 240px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>My Portfolio</h1>
-    <p>Check out some of my recent projects below.</p>
+    <h1>Your Name</h1>
+    <p>A selection of projects exploring code, design, and storytelling.</p>
   </header>
 
-  <div class="container">
-
-    <div class="project">
-      <iframe src="https://your-embed-link-1.com"></iframe>
+  <main class="container">
+    <section class="project">
+      <iframe src="https://your-embed-link-1.com" title="Project One"></iframe>
       <div class="description">
         <h2>Project One</h2>
-        <p>A web app that visualizes data from smart sensors in real-time using D3.js and WebSockets.</p>
+        <p>This project visualizes environmental sensor data with elegant, real-time graphs using D3 and websockets. Designed to spark conversations around data, design, and atmosphere.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="project">
-      <iframe src="https://your-embed-link-2.com"></iframe>
+    <section class="project">
+      <iframe src="https://your-embed-link-2.com" title="Project Two"></iframe>
       <div class="description">
         <h2>Project Two</h2>
-        <p>A machine learning dashboard for predicting environmental trends based on open GIS data.</p>
+        <p>A predictive dashboard blending open-source GIS data with machine learning forecasts — built to explore patterns in climate and community wellbeing.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="project">
-      <iframe src="https://your-embed-link-3.com"></iframe>
+    <section class="project">
+      <iframe src="https://your-embed-link-3.com" title="Project Three"></iframe>
       <div class="description">
         <h2>Project Three</h2>
-        <p>An interactive map that explores the relationship between urban green spaces and social wellbeing.</p>
+        <p>An interactive story-map that uncovers urban green spaces and their impact on emotion and place-making. Built with Mapbox and gentle transitions.</p>
       </div>
-    </div>
-
-  </div>
+    </section>
+  </main>
 </body>
 </html>
