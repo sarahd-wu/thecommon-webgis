@@ -3,82 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
   <title>Portfolio | Your Name</title>
-  <style>
-    /* Typography and Base Styles */
-    body {
-      margin: 0;
-      font-family: "Georgia", serif;
-      background-color: #fefefe;
-      color: #2b2b2b;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 3rem 1rem;
-      text-align: center;
-      background-color: #f0f0f0;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.75rem;
-      font-weight: normal;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 1.125rem;
-      color: #666;
-      margin-top: 0.5rem;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 4rem;
-      align-items: center;
-    }
-
-    .project iframe {
-      width: 100%;
-      height: 300px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-
-    .description {
-      padding: 1rem;
-    }
-
-    .description h2 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: #1a1a1a;
-      font-weight: normal;
-    }
-
-    .description p {
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .project {
-        grid-template-columns: 1fr;
-      }
-
-      .project iframe {
-        height: 240px;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -88,26 +14,49 @@
 
   <main class="container">
     <section class="project">
-      <iframe src="https://your-embed-link-1.com" title="Project One"></iframe>
+        <div class="image-wrapper">
+            <img src="image-1.png" title="Project One" width="560"></img>
+            <div class="overlay">Project One</div>
+        </div>
       <div class="description">
         <h2>Project One</h2>
         <p>This project visualizes environmental sensor data with elegant, real-time graphs using D3 and websockets. Designed to spark conversations around data, design, and atmosphere.</p>
+        <div class="icon-link">
+            <img src="icons/mapbox-icon.svg" alt="Link Icon">
+            <a href="https://your-project-link.com" target="_blank">ArcGIS Experience Builder</a>
+        </div>
       </div>
     </section>
 
     <section class="project">
-      <iframe src="https://your-embed-link-2.com" title="Project Two"></iframe>
+        <div class="image-wrapper">
+            <img src="image-2.png" title="Project Two" width="560"></img>
+            <div class="overlay">Project Two</div>
+        </div>
       <div class="description">
         <h2>Project Two</h2>
         <p>A predictive dashboard blending open-source GIS data with machine learning forecasts — built to explore patterns in climate and community wellbeing.</p>
+        <div class="icon-link">
+            <img src="icons/experience-builder.png" alt="Link Icon">
+            <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>
+        </div>
       </div>
     </section>
 
     <section class="project">
-      <iframe src="https://your-embed-link-3.com" title="Project Three"></iframe>
+        <div class="image-wrapper">
+            <a href="https://survey123.arcgis.com/share/06c1c3764c0b44bc83b7d51e6fa99c4e" target="_blank">
+                <img src="image-3.png" title="Project Three" width="560"></img>
+                <div class="overlay">Project Three</div>
+            </a>
+        </div>
       <div class="description">
         <h2>Project Three</h2>
         <p>An interactive story-map that uncovers urban green spaces and their impact on emotion and place-making. Built with Mapbox and gentle transitions.</p>
+        <div class="icon-link">
+            <img src="icons/survey123.svg" alt="Link Icon">
+            <a href="https://survey123.arcgis.com/" target="_blank">ArcGIS Survey123</a>
+        </div>
       </div>
     </section>
   </main>
