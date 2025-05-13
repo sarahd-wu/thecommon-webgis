@@ -4,15 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="styles.css">
-  <title>Portfolio | Your Name</title>
+  <title>Final Portfolio for WebGIS | Sarah Wu</title>
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>A selection of projects exploring code, design, and storytelling.</p>
+    <h1>Sarah Wu</h1>
+    <p>A collaboration with The Common @ Amherst College, a literary magazine that publishes literature and art from around the world.</p>
   </header>
 
   <main class="container">
+
+    <section class="intro">
+        <div class="intro-text">
+          <h2>About This Portfolio</h2>
+          <p>
+            This portfolio is a collaboration with <em>The Common</em>, a literary magazine that publishes stories rooted in place. 
+            The projects here are inspired by the magazine’s <strong>dispatches</strong> — short, powerful reflections from around the world. 
+            Each project is an attempt to translate these narrative moments into digital, visual, and spatial expressions, exploring what it means to locate meaning across landscapes.
+          </p>
+          <p>
+            My mission is to explore place-based storytelling in our dispatches. I aim to deepen spatial understanding and invite community-centered feedback, carrying forward a dispatch's spirit of locating ourselves not just on a map, but within lived experience.
+          </p>
+        </div>
+        <div class="intro-image">
+          <img src="the-common-logo.png" alt="A photo representing The Common" />
+        </div>
+      </section>
+
+      <!-- <hr class="section-divider"> -->
+
     <section class="project">
         <div class="image-wrapper">
             <a href="https://experience.arcgis.com/experience/1f7dbbb7c21645d195eba7c78bfc0fe4/" target="_blank">
@@ -22,28 +42,44 @@
         </div>
       <div class="description">
         <h2>Project One</h2>
-        <p>This project visualizes environmental sensor data with elegant, real-time graphs using D3 and websockets. Designed to spark conversations around data, design, and atmosphere.</p>
+        <p>This project visualizes The Common’s dispatches—stories rooted in a strong sense of place. Readers can scroll through an interactive map to explore each dispatch, view author details, and read excerpts from the pieces.</p>
         <div class="icon-link">
             <img src="icons/mapbox-icon.svg" alt="Link Icon">
             <a href="https://your-project-link.com" target="_blank">ArcGIS Experience Builder</a>
         </div>
+
+        <div class="project-features">
+            <div class="features-label">Features</div>
+            <ul>
+              <li>Displays an interactive map with author details and excerpts.</li>
+              <li>Allows users to explore stories by location and gain a sense of place.</li>
+            </ul>
+          </div>
       </div>
     </section>
 
     <section class="project">
         <div class="image-wrapper">
-            <a href="/project-2/mapbox-dispatch.html" target="_blank">
+            <a href="project-2/mapbox-dispatch.html" target="_blank">
                 <img src="image-2.png" title="Project Two" width="560"></img>
                 <div class="overlay">Project Two</div>
             </a>
         </div>
       <div class="description">
         <h2>Project Two</h2>
-        <p>A predictive dashboard blending open-source GIS data with machine learning forecasts — built to explore patterns in climate and community wellbeing.</p>
+        <p>This project analyzes dispatch data by year of publication. A slider allows users to view dispatches by date, while hovering over the map reveals details about each country featured in the stories.</p>
         <div class="icon-link">
             <img src="icons/experience-builder.png" alt="Link Icon">
             <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>
         </div>
+
+        <div class="project-features">
+            <div class="features-label">Features</div>
+            <ul>
+              <li>Filters dispatches by year of publication.</li>
+              <li>Provides insights on dispatch distribution with interactive map hover details.</li>
+            </ul>
+          </div>
       </div>
     </section>
 
@@ -56,11 +92,19 @@
         </div>
       <div class="description">
         <h2>Project Three</h2>
-        <p>An interactive story-map that uncovers urban green spaces and their impact on emotion and place-making. Built with Mapbox and gentle transitions.</p>
+        <p>This project gathers reader feedback through a survey. Readers can rate and comment on each dispatch, share their reading experience, and choose to subscribe to The Common’s newsletter.</p>
         <div class="icon-link">
             <img src="icons/survey123.svg" alt="Link Icon">
             <a href="https://survey123.arcgis.com/" target="_blank">ArcGIS Survey123</a>
         </div>
+
+        <div class="project-features">
+            <div class="features-label">Features</div>
+            <ul>
+              <li>Collects ratings and comments from readers on each dispatch.</li>
+              <li>Offers an option to subscribe to The Common’s newsletter.</li>
+            </ul>
+          </div>
       </div>
     </section>
   </main>

@@ -136,4 +136,81 @@ body {
     color: rgb(0, 224, 224);
   }
 
+  .intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    background-color: #2b2b2b;
+    color: #f4f4f4;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+  }
   
+  .intro-text h2 {
+    font-size: 1.75rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .intro-text p {
+    font-size: 1rem;
+    color: #dddddd;
+    margin-bottom: 1.25rem;
+  }
+  
+  .intro-image img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .intro {
+      grid-template-columns: 1fr;
+    }
+  
+    .intro-image img {
+      margin-top: 1.5rem;
+      max-height: 300px;
+      width: 100%;
+    }
+  }
+  
+  .section-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 4rem auto;
+    max-width: 900px;
+  }
+  
+  .features-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-features {
+    margin-top: 1.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.7rem;
+    color: #666;
+  }
+  
+  .project-features ul {
+    margin: 0;
+    padding-left: 0.7rem;
+    list-style-type: disc;
+  }
+  
+  .project-features li {
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
