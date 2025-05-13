@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+h3 {
+    margin: 10px;
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    margin: 10px;
+}
+
+/**
+* Create a position for the map
+* on the page */
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/**
+* Set rules for how the map overlays
+* (information box and legend) will be displayed
+* on the page. */
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    margin-right: 20px;
+    font-family: Arial, sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+}
+
+#features {
+    top: 0;
+    height: 100px;
+    margin-top: 20px;
+    width: 250px;
+}
+
+#legend {
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0 0 0 0.1);
+    line-height: 18px;
+    height: 230px;
+    margin-bottom: 40px;
+    width: 100px;
+}
+
+.legend-key {
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+/** MY CODE **/
+.map-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px;
+  }
+  
+  .map-controls label,
+  .map-controls span {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  #yearSlider {
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  #yearLabel {
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+    font-size: 16px;
+  }
+  
+  #filterToggle {
+    margin-right: 6px;
+  }

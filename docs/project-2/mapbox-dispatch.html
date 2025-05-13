@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link
+    href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="map-overlay" id="features">
+    <h2>Dispatch Location</h2>
+    <div id="pd"><p>Hover over a country!</p></div>
+    </div>
+    <div id="controls" class="map-controls">
+        <div id="year-slider"></div>
+        <div id="toggle"></div>
+    </div>
+    <div class="map-overlay" id="legend"></div>
+
+    <script>
+
+        function applyFilter() {
+         }
+
+        const yearCategories = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic2R3dTI1IiwiYSI6ImNtOWdqZG82MTF4Y3gya3Exc2J5ajRkcXAifQ.o7LFSxJ_lLVn7PuGTdQtJA';
+        const map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/sdwu25/cmalizr6p006i01qk9slv0ntu' // replace this with your style URL
+        });
+
+        map.getCanvas().style.cursor = 'default';
+
+        map.fitBounds([
+            [-120, 25], // Southwest corner (closer in)
+            [-60, 50]   // Northeast corner
+        ]);
+        
+        map.on('load', () => {
+            // the rest of the code will go in here
+            const layers = [
+            '1 post',
+            '2 posts',
+            '3 posts',
+            '4 posts',
+            '5 or more posts',
+            ];
+            const colors = [
+            'rgb(227, 231, 235)',
+            'rgb(189, 197, 204)',
+            'rgb(138, 148, 158)',
+            'rgb(138, 148, 158)',
+            'rgb(31, 36, 40)'
+            ];
+            
+            // create legend
+            const legend = document.getElementById('legend');
+            const legendHeading = document.createElement('h3');
+            legendHeading.innerHTML = "# of dispatches published in each country"
+            legend.appendChild(legendHeading)
+
+            layers.forEach((layer, i) => {
+            const color = colors[i];
+            const item = document.createElement('div');
+            const key = document.createElement('span');
+            key.className = 'legend-key';
+            key.style.backgroundColor = color;
+
+            const value = document.createElement('span');
+            value.innerHTML = `${layer}`;
+            item.appendChild(key);
+            item.appendChild(value);
+            legend.appendChild(item);
+
+            });
+
+            // create slider
+            const yearSlider = document.getElementById('year-slider')
+
+            const slider = document.createElement('input');
+            slider.type = 'range';
+            slider.id = 'yearSlider';
+            slider.min = '0';
+            slider.max = '4';
+            slider.step = '1';
+            slider.value = '0';
+
+            const label = document.createElement('span');
+            label.id = 'yearLabel';
+            label.textContent = '2018';
+
+            yearSlider.appendChild(slider);
+            yearSlider.appendChild(label);
+
+            document.getElementById('yearSlider').addEventListener('input', (e) => {
+            const index = parseInt(e.target.value);
+            const selectedYear = yearCategories[index];
+            document.getElementById('yearLabel').textContent = selectedYear;
+
+            map.setFilter('circles', ['==', ['get', 'Year'], selectedYear]);
+            map.setFilter('labels', ['==', ['get', 'Year'], selectedYear]);
+
+            })
+
+            // create toggle for slider
+            const toggle = document.getElementById('toggle');
+
+            const toggleFilter = document.createElement('input');
+            toggleFilter.type = 'checkbox';
+            toggleFilter.id = 'filterToggle';
+            toggleFilter.checked = true;
+
+            const toggleLabel = document.createElement('label');
+            toggleLabel.htmlFor = 'filterToggle';
+            toggleLabel.textContent = 'Enable year filter';
+
+            toggle.appendChild(toggleFilter);
+            toggle.appendChild(toggleLabel);
+
+            
+            toggleFilter.addEventListener('change', () => {
+            if (toggleFilter.checked) {
+                yearSlider.style.display = 'block';
+            } else {
+                yearSlider.style.display = 'none';
+                map.setFilter('labels', null);
+                map.setFilter('circles', null); // show all
+            }
+
+        });
+
+        map.on('mousemove', (event) => {
+            const country = map.queryRenderedFeatures(event.point, {
+                layers: ['total-count']
+            });
+
+            const pd = document.getElementById('pd');
+
+            if (country.length > 0 && country[0].properties) {
+                const name = country[0].properties.COUNTRY || 'Unknown';
+                const count = country[0].properties.Point_Coun || 'N/A';
+                pd.innerHTML = `
+                    <h3>${name}</h3>
+                    <p><strong>${count}</strong> published posts</p>
+                `;
+            } else {
+                pd.innerHTML = `<p>Hover over a country!</p>`;
+            }
+        });
+
+        });
+
+    </script>
+
+</body>
+</html>
